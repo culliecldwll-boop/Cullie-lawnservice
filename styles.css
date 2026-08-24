@@ -1,11 +1,38 @@
 
 /* GLOBAL *//* White header with gold logo bar */
+/* White header with gold underline */
 header {
-    background-color: #ffffff; /* pure white */
+    background-color: #ffffff;
     padding: 0;
     margin: 0;
     text-align: center;
-    border-bottom: 3px solid #d4af37; /* gold underline */
+    border-bottom: 3px solid #d4af37;
+}
+
+/* Gold bar behind the logo */
+header .logo-bar {
+    background-color: #d4af37;
+    padding: 20px 0;
+}
+
+/* Logo size */
+header img {
+    max-width: 180px;
+}
+
+/* Navigation links */
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
 }
 
 /* Gold bar behind the logo */
