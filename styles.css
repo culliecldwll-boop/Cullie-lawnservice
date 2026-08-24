@@ -31,7 +31,45 @@ nav a {
 nav a:hover {
     color: #d4af37;
     text-decoration: underline;
+}/* Service card container */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
 }
+
+/* Individual service card */
+.service-card {
+    background-color: #ffffff;
+    border: 2px solid #d4af37;     /* gold border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* Service card titles */
+.service-card h3 {
+    color: #d4af37;               /* gold title */
+    margin-bottom: 10px;
+}
+
+/* Service card text */
+.service-card p {
+    color: #333333;
+    font-size: 16px;
+}
+
 
 }
 
