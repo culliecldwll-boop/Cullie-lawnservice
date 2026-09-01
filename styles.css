@@ -1,6 +1,11 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
 
-/* GLOBAL *//* White header with gold logo bar */
-/* White header with gold underline */
+/* Header styling */
 header {
     background-color: #ffffff;
     padding: 0;
@@ -21,97 +26,23 @@ header img {
 }
 
 /* Navigation links */
+nav {
+  text-align: center;
+}
+
 nav a {
     color: #333;
     text-decoration: none;
     padding: 12px;
     font-size: 18px;
+    display: inline-block;
 }
 
 nav a:hover {
     color: #d4af37;
     text-decoration: underline;
-}/* Service card container */
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 40px;
 }
 
-/* Individual service card */
-.service-card {
-    background-color: #ffffff;
-    border: 2px solid #d4af37;     /* gold border */
-    border-radius: 10px;
-    padding: 20px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-
-/* Service card titles */
-.service-card h3 {
-    color: #d4af37;               /* gold title */
-    margin-bottom: 10px;
-}
-
-/* Service card text */
-.service-card p {
-    color: #333333;
-    font-size: 16px;
-}
-
-
-}
-
-/* Gold bar behind the logo */
-header .logo-bar {/* White header with gold logo bar */
-header {
-    background-color: #ffffff; /* pure white */
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    border-bottom: 3px solid #d4af37; /* gold underline */
-}
-
-/* Gold bar behind the logo */
-header .logo-bar {
-    background-color: #d4af37; /* gold */
-    padding: 20px 0;
-}
-
-header img {
-    max-width: 180px; /* adjust logo size */
-}
-
-    background-color: #d4af37; /* gold */
-    padding: 20px 0;
-}
-
-header img {
-    max-width: 180px; /* adjust logo size */
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #333;
-}header {
-    background-color: #ffffff; /* pure white header */
-    color: #d4af37;           /* gold text */
-    border-bottom: 3px solid #d4af37; /* gold underline accent */
-    padding: 20px 0;
-    text-align: center;
-}
 
 
 /* HERO SECTION */
@@ -153,20 +84,6 @@ body {
   color: #2e7d32;
 }
 
-/* NAVIGATION (for future pages) */
-nav {
-  background: #2e7d32;
-  padding: 15px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
 /* PAGE SECTIONS */
 .section, .box, .table, .gallery {
   max-width: 900px;
@@ -185,8 +102,28 @@ nav a {
 
 .service-card {
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 2px solid #d4af37;
   border-radius: 8px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.service-card h3 {
+  color: #d4af37;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.service-card p {
+  color: #333333;
+  font-size: 16px;
 }
 
 /* GALLERY */
@@ -214,6 +151,7 @@ input, textarea {
   margin-top: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 button {
@@ -225,4 +163,82 @@ button {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1b5e20;
+}
+
+/* FOOTER */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav a {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  header img {
+    max-width: 120px;
+  }
+
+  .section, .box, .table, .gallery {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    padding: 6px;
+    font-size: 14px;
+    display: block;
+    margin: 5px 0;
+  }
+
+  header {
+    padding: 10px 0;
+  }
+
+  .section, .box, .table, .gallery {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

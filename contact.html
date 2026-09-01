@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Cullie Lawn Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return false;
+            }
+            
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            alert('Thank you! We will get back to you soon.');
+            document.getElementById('contactForm').reset();
+            return false;
+        }
+    </script>
+</head>
+<body>
 <header>
     <div class="logo-bar">
-        <img src="logo.png" alt="Cullie Lawn Service Logo">
+        <img src="logo.header.png" alt="Cullie Lawn Service Logo">
     </div>
 
     <nav>
@@ -15,68 +44,35 @@
     </nav>
 </header>
 
-    </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
->
-    
-    <h1 style="color:#D4AF37; font-family:'Playfair Display', serif; margin:0;">
-        Cullie Lawn Service
-    </h1>
-
-    <nav style="margin-top:20px;">
-        <a href="Cullie-lawnservice/index.html">Home</a>
-        <a href="Cullie-lawnservice/services.html">Services</a>
-        <a href="Cullie-lawnservice/gallery.html">Gallery</a>
-        <a href="Cullie-lawnservice/pricing.html">Pricing</a>
-        <a href="Cullie-lawnservice/about.html">About</a>
-        <a href="Cullie-lawnservice/contact.html">Contact</a>
-    </nav>
-</header>
-
-
-<body>
-
-<nav>
-  <a href="Cullie-lawnservice/index.html">Home</a>
-  <a href="Cullie-lawnservice/services.html">Services</a>
-  <a href="Cullie-lawnservice/gallery.html">Gallery</a>
-  <a href="Cullie-lawnservice/pricing.html">Pricing</a>
-  <a href="Cullie-lawnservice/about.html">About</a>
-  <a href="Cullie-lawnservice/contact.html">Contact</a>
-</nav>
-
-
-
-
-
+<main>
 <div class="section">
   <h2>Contact Us</h2>
 
   <p>Have questions or want to schedule service? Send us a message below.</p>
 
-  <form>
+  <form id="contactForm" onsubmit="validateForm(event)">
     <label for="name">Name</label>
-    <input id="name" type="text" placeholder="Your name">
+    <input id="name" type="text" placeholder="Your name" required>
 
     <label for="email">Email</label>
-    <input id="email" type="email" placeholder="Your email">
+    <input id="email" type="email" placeholder="Your email" required>
 
     <label for="message">Message</label>
-    <textarea id="message" rows="5" placeholder="How can we help?"></textarea>
+    <textarea id="message" rows="5" placeholder="How can we help?" required></textarea>
 
     <button type="submit">Send Message</button>
   </form>
 </div>
+</main>
 
+<footer>
+    <p>&copy; 2024 Cullie Lawn Service. All rights reserved.</p>
+    <p>Serving Spartanburg, SC | Professional Lawn Care</p>
+    <p>
+        <a href="contact.html">Contact Us</a> | 
+        <a href="about.html">About</a> | 
+        <a href="services.html">Services</a>
+    </p>
+</footer>
 </body>
 </html>
-
